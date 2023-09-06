@@ -1,8 +1,5 @@
 .navbar.bg-light {
   background-color: rgb(241, 234, 226) !important;
-  /*.form-control{ */
-  /*/border-radius: 4.25rem;
-    /*/
 }
 
 nav ol {
@@ -38,8 +35,6 @@ nav ol {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  /* width: 100%; */
-
   padding: 30px 0px 0px 0px;
 }
 
@@ -48,14 +43,7 @@ nav ol {
   display: flex;
   flex-direction: column;
   width: 30%;
-  /* width: 100%; */
-  /* height:auto; 
-    float:left;  */
 
-}
-
-.colfooter:nth-child(3) {
-  /* width:50%; */
 }
 
 .colfooter ul {
@@ -89,7 +77,10 @@ nav ol {
   padding-bottom: 0.5em;
   margin-bottom: 0.5em;
   border-bottom: 1px rgb(241, 234, 226);
-  ;
+}
+
+.colfooter:nth-child(1) h3.titleFooter {
+  margin-left: 30px;
 }
 
 .colfooter p {
