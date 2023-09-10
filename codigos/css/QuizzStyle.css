@@ -1,7 +1,7 @@
 body {
     width: 100vw;
     height: 100vh;
-    background-color: #e4d7d7;
+    background-color: #e7b2b2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,7 +12,7 @@ section.card {
     width: 40vw;
     height: 85vh;
     background-color: #fff;
-    border-radius: 7%;
+    border-radius: 40px;
 }
 
 div.content {
@@ -31,15 +31,19 @@ div.cabeçalho {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    
+    background-color: #e4d7d7;
+    border-radius: 40px 40px 0 0;
+        
 }
 
 div.cabeçalho span.voltar {
     margin-left: 10px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
 }
-
+div.cabeçalho h3 {
+    color: #b47b44;
+} 
 div.cabeçalho span.fechar {
     margin-right: 20px;
 }
@@ -49,4 +53,36 @@ div.cabeçalho span.fechar {
 div.chat {
     height: 90%;
     width: 100%;
+}
+
+div.bot {
+    display:flex;
+    flex-direction: row;
+    margin: 5px 5px 0 0;
+    align-items: center;
+}
+
+
+div.usuario {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 5px 5px 0 0;
+    align-items: center;
+}
+
+div.bot img,
+div.usuario img {
+    width: 65px;
+    height: 65px;
+    border-radius: 27.6px;
+}
+
+
+div.text-area {
+    display: flex;
+    padding: 15px;
+    /* border: solid 1px #ccc; */
+    background-color: #e4d7d7;
+    border-radius: 15px;
+    
 }
