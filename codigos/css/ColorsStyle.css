@@ -24,7 +24,7 @@ nav ol {
   text-align: justify;
   font: bold calc(1em + 2 * (100vw - 120px) / 100) 'Dancing Script', fantasy;
   color: #5f2c02;
-  text-shadow: #000 2px 2px 0.2rem;
+  text-shadow: 2px 2px 0.2rem;
 }
 
 .main_footer {
@@ -220,7 +220,11 @@ nav ol {
   width: 150%;
 
 }
-
+.começar {
+  border: none;
+  width: 50px;
+  height: 40px;
+}
 .main_footer_copy {
   background-color: rgb(241, 234, 226);
   width: 100%;
@@ -255,7 +259,7 @@ nav ol {
 .main_footer_copy .by i {
   font-size: 0.96em;
   margin-right: 3px;
-  color: #e82626;
+  color: #e826;
 }
 
 /*Responsivo*/
