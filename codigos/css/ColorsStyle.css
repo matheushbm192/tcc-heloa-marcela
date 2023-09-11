@@ -1,3 +1,8 @@
+* {
+  font-family: auto;
+  color: rgb(139, 85, 48);
+  
+}
 .navbar.bg-light {
   background-color: rgb(241, 234, 226) !important;
 }
@@ -8,6 +13,7 @@ nav ol {
   padding: 0;
   flex-direction: column;
   align-items: center;
+  font-size: large;
 }
 
 .button {
@@ -219,10 +225,10 @@ nav ol {
   width: 150%;
 
 }
-.começar {
+a.começar img {
   border: none;
-  width: 50px;
-  height: 40px;
+  height: 50px;
+  width: 150px;
 }
 .main_footer_copy {
   background-color: rgb(241, 234, 226);
@@ -275,3 +281,13 @@ nav ol {
     border-right: 0;
   }
 } */
+
+.p-md-5 {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .ml-md-4, .mx-md-4 {
+    margin-left: 0;
+}
+}
