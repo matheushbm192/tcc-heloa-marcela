@@ -1,3 +1,7 @@
+<?php
+  include_once ("cadastroconexao.php");
+?>
+
 <!doctype html>
 <html lang="pt-br">
 
@@ -37,29 +41,69 @@
 <br>
   <h1 style="text-align: center; color: rgb(139, 85, 48)">Faça seu cadastro!</h1>
 
-  <form  action="C:\Users\0057140\Downloads\tcc-heloa-marcela-main\codigos\php\processa_cadastro.php" style = "text-align: center;  color: rgb(139, 85, 48)" method="POST">
+    <form  method="POST" action="cadastro.php" style = "text-align: center;  color: rgb(139, 85, 48)">
     
-    <label for = "nome" >Nome</label> <br>
-    <input type= "text" id="nome" name="txtNome" required autofocus placeholder="Informe seu nome"> <br><br>
-    <label for = "email" >Email</label> <br>
-    <input type= "text" id="email" name="txtEmail" required autofocus placeholder = "Informe seu e-mail"> <br><br>
-    <label for = "senha" >Senha</label> <br>
-    <input type= "password" id="senha" name="txtSenha" required autofocus placeholder="Informe sua senha"> <br><br>
-    <label for = "confirmar" >Confirme sua senha</label> <br>
-    <input type= "password" id="confirmar" name="txtConfSenha" required autofocus placeholder = "Confirme sua senha"> <br><br>
-    <label for = "telefone" >Telefone</label> <br>
-    <input type= "number" id="telefone" name="telTelefone" required autofocus placeholder="Informe número de celular"> <br><br>
-    <label for = "nascimento" >Data de nascimento</label> <br>
-    <input type= "date" id="nascimento" name="DateNasc" required autofocus placeholder=""> <br><br>
-    <input type="submit" style="height: 500; width: 400; background-color: blanchedalmond; border: none; color: #8b5530;" value="Enviar">
-  
-  <p style="text-align: center;"></p>
-    <a href="quizz.html"></a>
-   
-    
-      </form >
+    <label for = "" >Nome</label> <br>
+    <input type= "text" name="txtNome" required autofocus placeholder="Informe seu nome"> <br><br>
+    <label for = "" >Email</label> <br>
+    <input type= "text" name="txtEmail" required placeholder = "Informe seu e-mail"> <br><br>
+    <label for = "" >Senha</label> <br>
+    <input type= "password" name="txtSenha" required placeholder="Informe sua senha"> <br><br>
+    <label for = "" >Confirme sua senha</label> <br>
+    <input type= "password" name="txtConfSenha" required placeholder = "Confirme sua senha"> <br><br>
+    <label for = "" >Telefone</label> <br>
+    <input type= "number" name="telTelefone" required autofocus placeholder="Informe número de celular"> <br><br>
+    <label for = "" >Data de nascimento</label> <br>
+    <input type= "date" name="DateNasc" required autofocus placeholder=""> <br><br>
+    <?php
+          $nomeUser = $_POST['txtNome'];
+          $emailUser = $_POST['txtEmail'];
+          $senhaUser = $_POST['txtSenha'];
+          $telUser = $_POST['telTelefone'];
+      
+          $conn = mysqli('localhost:3307','root','');
+          $db = mysqli_select_db('colors');
+          $query_select = "SELECT emailUser FROM usuario WHERE emailUser = '$emailUser'";
+          $select = mysql_query($query_select,$conn);
+          $array = mysql_fetch_array($select);
+          $logarray = $array['emailUser'];
+      
+        if($emailUser == "" || $emailUser == null){
+          echo"<script language='javascript' type='text/javascript'>
+          alert('O campo login deve ser preenchido');window.location.href='
+          cadastro.html';</script>";
+      
+          }else{
+            if($logarray == $emailUser){
+      
+              echo"<script language='javascript' type='text/javascript'>
+              alert('Esse login já existe');window.location.href='
+              cadastro.html';</script>";
+              die();
+      
+            }else{
+              $query = "INSERT INTO usuario (nomeUser, emailUSer,senhaUser, telUser) VALUES ('$nomeUser','$emailUser','$senhaUser', '$telUser')";
+              $insert = mysql_query($query,$conn);
+      
+              if($insert){
+                echo"<script language='javascript' type='text/javascript'>
+                alert('Usuário cadastrado com sucesso!');window.location.
+                href='login.html'</script>";
+              }else{
+                echo"<script language='javascript' type='text/javascript'>
+                alert('Não foi possível cadastrar esse usuário');window.location
+                .href='cadastro.html'</script>";
+              }
+            }
+          }
+    ?>
 
-    
+  </form >
+  <p style="text-align: center;">
+    <a href="quizz.html">
+      <input type="submit" style="height: 500; width: 400; background-color: blanchedalmond; border: none; color: #8b5530;" value="Concluir!">
+
+    </a>
     <footer class="main_footer">
       <div class="content">
         <div class="colfooter">
@@ -117,3 +161,4 @@
 </body>
 
 </html>
+

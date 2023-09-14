@@ -1,3 +1,9 @@
+* {
+  font-family: auto;
+  color: rgb(190, 115, 65);
+  font-size: 1em;
+  
+}
 .navbar.bg-light {
   background-color: rgb(241, 234, 226) !important;
 }
@@ -8,6 +14,9 @@ nav ol {
   padding: 0;
   flex-direction: column;
   align-items: center;
+  font-size: large;
+  color: rgb(190, 115, 65);
+  
 }
 
 .button {
@@ -22,7 +31,7 @@ nav ol {
   height: 120px;
   text-align: justify;
   font: bold calc(1em + 2 * (100vw - 120px) / 100) 'Dancing Script', fantasy;
-  color: #5f2c02;
+  color: rgb(190, 115, 65);
   text-shadow: 2px 2px 0.2rem;
 }
 
@@ -59,7 +68,7 @@ nav ol {
 
 .colfooter ul li a {
   text-decoration: none;
-  color: rgb(139, 85, 48);
+  color: rgb(190, 115, 65);
   font-size: 1em;
 }
 
@@ -75,7 +84,7 @@ nav ol {
 
   font-family: 'open_sansregular';
   font-size: 1.3em;
-  color: rgb(139, 85, 48);
+  color: rgb(190, 115, 65);
   padding-bottom: 0.5em;
   margin-bottom: 0.5em;
   border-bottom: 1px rgb(241, 234, 226);
@@ -95,7 +104,7 @@ nav ol {
 .botao {
 
   padding: 10px 12px;
-  color: rgb(139, 85, 48);
+  color: rgb(190, 115, 65);
   font-family: 'open_sansregular';
   letter-spacing: 2px;
   text-align: center;
@@ -140,10 +149,10 @@ nav ol {
 .botao {
 
   font-size: 1em;
-  color: rgb(139, 85, 48);
+  color: rgb(190, 115, 65);
   text-align: center;
   font-family: 'open_sansregular';
-  border: 1px solid rgb(139, 85, 48);
+  color: rgb(190, 115, 65);
   border-radius: 3px;
   overflow: hidden !important;
   -webkit-transition: all .4s ease-in-out;
@@ -219,13 +228,18 @@ nav ol {
   width: 150%;
 
 }
-.começar {
+a.começar img {
   border: none;
-  width: 50px;
+  height: 50px;
+  width: 150px;
+}
+a.entrar img {
+  border: none;
   height: 40px;
+  width: 100px;
 }
 .main_footer_copy {
-  background-color: rgb(241, 234, 226);
+  background-color: come;
   width: 100%;
   float: left;
   text-align: center;
@@ -247,7 +261,7 @@ nav ol {
 }
 
 .main_footer_copy .by a {
-  color: rgb(139, 85, 48);
+  color: rgb(190, 115, 65);
   text-decoration: none;
 }
 
@@ -258,7 +272,7 @@ nav ol {
 .main_footer_copy .by i {
   font-size: 0.96em;
   margin-right: 3px;
-  color: #e826;
+  color: rgb(190, 115, 65);
 }
 
 /*Responsivo*/
@@ -275,3 +289,13 @@ nav ol {
     border-right: 0;
   }
 } */
+
+.p-md-5 {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .ml-md-4, .mx-md-4 {
+    margin-left: 0;
+}
+}
