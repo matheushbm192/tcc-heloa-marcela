@@ -2,6 +2,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: #e7b2b2;
+    background-attachment: local;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,6 +34,7 @@ div.cabeçalho {
     justify-content: space-between;
     background-color: #e4d7d7;
     border-radius: 40px 40px 0 0;
+    z-index: 1;
         
 }
 
@@ -51,7 +53,7 @@ div.cabeçalho span.fechar {
 /* CSS DO CHAT */
 
 div.chat {
-    height: 90%;
+    height: 80%;
     width: 100%;
 }
 
@@ -81,8 +83,31 @@ div.usuario img {
 div.text-area {
     display: flex;
     padding: 15px;
-    /* border: solid 1px #ccc; */
     background-color: #e4d7d7;
     border-radius: 15px;
     
+}
+
+div.respostas {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    border-radius: 0 0 40px 40px;
+    background-color: #e4d7d7;
+    z-index: 1;
+}
+
+span.opcoes {
+    padding: 10px;
+    border: solid 1px;
+    border-radius: 50px;
+    cursor: pointer ;
+}
+span.opcoes:hover {
+    
+  border: 1px solid #ffffff;
+  color: rgb(241, 234, 226);
 }
