@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/ColorsStyle.css">
+  <title>Início</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#" style="color: rgb(190, 115, 65)">
+      <img src="../Imagem/logocabeçalho.png" width="60" height="50" class="d-inline-block align-top" alt="">
+    </a>
+    <form class="form-inline  ">
+      <input class="form-control mr-sm-2" type="Pesquisar" placeholder="Pesquisar" aria-label="Pesquisar">
+
+    </form>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="mr-auto"></div>
+      <ul class="navbar-nav my-2 my-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#" style="color: rgb(190, 115, 65)"><span
+              class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-display="static"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: rgb(190, 115, 65)">
+            Vem fazer seu login :)
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdown">
+            <h6 class="dropdown-header" style="color: rgb(190, 115, 65)">Já tem uma conta?</h6>
+            <a class="dropdown-item" href="login.html" style="color: rgb(190, 115, 65)">Entrar</a>
+            <a class="dropdown-item" href="cadastro.html" style="color: rgb(190, 115, 65)">Cadastre-se</a>
+          </div>
+
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+  <video id="camera" autoplay></video>
+    <button id="startCamera">Iniciar Câmera</button>
+    <button id="stopCamera" style="display: none;">Parar Câmera</button>
+    
+    <script>
+        const camera = document.getElementById('camera');
+        const startCameraButton = document.getElementById('startCamera');
+        const stopCameraButton = document.getElementById('stopCamera');
+
+        let stream = null;
+
+        // Função para iniciar a câmera
+        async function startCamera() {
+            try {
+                // Obter permissão para acessar a câmera
+                stream = await navigator.mediaDevices.getUserMedia({ video: true });
+
+                // Exibir a transmissão da câmera no elemento de vídeo
+                camera.srcObject = stream;
+                camera.play();
+
+                // Alternar visibilidade dos botões
+                startCameraButton.style.display = 'none';
+                stopCameraButton.style.display = 'block';
+            } catch (error) {
+                console.error('Erro ao iniciar a câmera:', error);
+            }
+        }
+
+        // Função para parar a câmera
+        function stopCamera() {
+            if (stream) {
+                const tracks = stream.getTracks();
+                tracks.forEach(track => track.stop());
+            }
+
+            // Parar a exibição da câmera
+            camera.srcObject = null;
+
+            // Alternar visibilidade dos botões
+            startCameraButton.style.display = 'block';
+            stopCameraButton.style.display = 'none';
+        }
+
+        startCameraButton.addEventListener('click', startCamera);
+        stopCameraButton.addEventListener('click', stopCamera);
+    </script>
